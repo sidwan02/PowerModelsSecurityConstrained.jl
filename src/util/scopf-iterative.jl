@@ -127,6 +127,8 @@ The base-case model is formulation agnostic.  The flow cuts are based on PTDF
 and utilize the DC Power Flow assumption.
 """
 function run_c1_scopf_ptdf_cuts!(network::Dict{String,<:Any}, model_type::Type, optimizer; max_iter::Int=100, time_limit::Float64=Inf)
+    println("HELP PLS")
+
     if _IM.ismultinetwork(network)
         error(_LOGGER, "run_c1_scopf_ptdf_cuts can only be used on single networks")
     end
